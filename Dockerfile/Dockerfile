@@ -2,13 +2,7 @@ FROM centos:7
 RUN yum -y update && yum clean all
 RUN yum -y install epel-release http://rpms.famillecollet.com/enterprise/remi-release-7.rpm && yum clean all
 RUN yum -y install --enablerepo remi-php56 httpd bzip2 php-xml php php-mbstring php-mysqlnd php-gd && yum clean all
-RUN yum -y install wget && yum clean all
-RUN yum -y install vim && yum clean all
-RUN yum -y install curl && yum clean all
-RUN yum -y install zip && yum clean all
-RUN yum --force-yes -y install docker-engine && yum clean all
-RUN yum -y install git && yum clean all
-RUN yum -y install subversion && yum clean all
+
 
 ADD owncloud.conf /etc/httpd/conf.d/
 WORKDIR /var/www/html
